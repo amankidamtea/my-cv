@@ -1,65 +1,110 @@
 import Image from "next/image";
+import { Karantina, Inter, Kaushan_Script } from "next/font/google";
+
+const karantina = Karantina({ weight: "400", subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
+const kaushan = Kaushan_Script({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className={`bg-white font-sans dark:bg-white px-20 ${inter.className}`}>
+      {/* Section 1 */}
+      <section className="w-full flex justify-between  items-center">
+        <div className="w-[50%]">
+          <span className="text-[40px]">Hi, I’m Idham Asgap</span>
+          <h1 className={`${karantina.className} text-[200px] leading-44`}>FULLSTACK<br /> DEVELOPER</h1>
+          <p className="text-[20px] w-[60%] text-justify">
+            Saya adalah seorang fullstack developer web dan mobile app, saya telah berpengalaman dalam bidang ini selama 2 tahun lebih, saya sangat tertarik dengan dunia teknoligi. selain itu saya juga senang membuat desain grafis dan 3d, berikut saya juga lampirkan cv saya dibawah.
+          </p>
+          <div className="mt-5">
+            <a href="" className={`${kaushan.className} text-[20px] bg-black text-white px-10  py-2 rounded-full`}>My CV</a>
+          </div>
+        </div>
+        <div className="w-[30%] rounded-b-full overflow-hidden">
+          <Image
+            src="/my-foto.png"
+            alt="Next.js logo"
+            width={500}
+            height={200}
+            priority
+            className="w-full"
+          />
+        </div>
+      </section>
+      {/* section 2 */}
+      <section className="grid grid-cols-2 items-center mt-20">
+        <div className="">
+          <span className={`${kaushan.className} text-[40px]`}>Lets</span>
+          <h1 className={`${karantina.className} text-[200px] leading-44`}>EXPLORE MY<br /> PORTFOLIO</h1>
+        </div>
+        <div className="">
+          <p className="text-[20px] w-[60%] text-justify">
+            Berikut ini adalah beberapa projek saya yang saya kerjakan dalam 2 tahun lebih ini, untuk detailnya bisa lihat saja dibawah.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+      {/* card */}
+      <div className="grid grid-cols-3 gap-10 justify-center mt-10">
+        {Array(3).fill(0).map((_, i) => (
+          <div key={i} className="bg-gray-200 w-[80%] flex justify-center items-center rounded-4xl h-[400px]">
+            Portfolio
+          </div>
+        ))}
+      </div>
+      {/* section 3 */}
+      <section className="grid grid-cols-1 items-center mt-20">
+        <div className="">
+          <h1 className={`${karantina.className} text-[200px] leading-44`}>EXPERIENCE</h1>
         </div>
-      </main>
+        <div className="">
+          <p className="text-[20px] w-[60%] text-justify">
+            Berikut ini adalah beberapa tempat saya bekerja.
+            <ul className="list-disc ml-5">
+              <li>PT SINARMAS TBK - Magang Kerja</li>
+              <li>POLRES CIANJUR - Operator</li>
+              <li>PT ORCA MOTO INDONESIA - Fullstack Developer</li>
+            </ul>
+          </p>
+        </div>
+      </section>
+      {/* section 4 */}
+      <section className="flex flex-row-reverse justify-between items-center w-full mt-20">
+        <div className="">
+          <h1 className={`${karantina.className} text-[200px] leading-44`}>OTHER<br/> MY SKILL</h1>
+        </div>
+        <div className="flex gap-5">
+          <a href="" className={`${kaushan.className} text-[20px] bg-black text-white px-10  py-2 rounded-full`}>Drible</a>
+          <a href="" className={`${kaushan.className} text-[20px] bg-black text-white px-10  py-2 rounded-full`}>Instagram</a>
+          <a href="" className={`${kaushan.className} text-[20px] bg-black text-white px-10  py-2 rounded-full`}>Shutterstock</a>
+        </div>
+      </section>
+      {/* card */}
+      <div className="grid grid-cols-3 gap-10 justify-center mt-10">
+        {Array(3).fill(0).map((_, i) => (
+          <div key={i} className="bg-gray-200 w-[80%] flex justify-center items-center rounded-4xl h-[400px]">
+            Portfolio
+          </div>
+        ))}
+      </div>
+      {/* footer */}
+      <footer className="mt-20">
+        <div className="flex justify-between items-center">
+          <div className="">
+            <p className={`${karantina.className} text-[160px] leading-32`}>HAVE A PROJECT <br/> OR OPPORTUNITY ? LETS TALK</p>
+          </div>
+          <div className="text-[30px]">
+            <div className="">
+              <a href="">Linkedin</a>
+            </div>
+            <div className="">
+              <a href="">Whatsapp</a>
+            </div>
+            <div className="">
+              <a href="">Email</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
