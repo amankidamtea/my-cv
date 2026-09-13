@@ -10,28 +10,34 @@ const kaushan = Kaushan_Script({ weight: "400", subsets: ["latin"] });
 
 const portFolioData = [
   {
-    title: "Optracs",
+    title: "Orca Ecomerce",
     image: "/portfolio/orca-ecomerce.png",
-    link: "https://optracs.com/",
+    link: "https://orcapowergear.com/",
     category: "Web",
   },
   {
     title: "Optracs",
     image: "/portfolio/optracs.png",
-    link: "https://optracs.com/",
+    link: "https://optracs.orcapowergear.com/",
     category: "Web",
   },
   {
-    title: "Optracs",
-    image: "/portfolio/coreapi.png",
-    link: "https://optracs.com/",
+    title: "Orca Backend Api",
+    image: "/portfolio/core-api.png",
+    link: "https://orca-racing.com/",
     category: "Web",
   },
   {
-    title: "Optracs",
+    title: "Harada Center",
     image: "/portfolio/harada.png",
-    link: "https://optracs.com/",
+    link: "https://haradainternasionalcenter.com/",
     category: "Web",
+  },
+  {
+    title: "Optracs Mobile",
+    image: "/portfolio/optracs-mobile.png",
+    link: "#",
+    category: "Mobile",
   },
 ];
 
@@ -251,19 +257,19 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3 sm:gap-5">
               <a
-                href=""
+                href="https://www.behance.net/idhamasegap"
                 className={`${kaushan.className} rounded-full bg-black px-5 py-2 text-[14px] text-white sm:px-8 sm:text-[18px] md:px-10 md:text-[20px]`}
               >
-                Dribbble
+                Behance
               </a>
               <a
-                href=""
+                href="https://www.instagram.com/idham_asegap/"
                 className={`${kaushan.className} rounded-full bg-black px-5 py-2 text-[14px] text-white sm:px-8 sm:text-[18px] md:px-10 md:text-[20px]`}
               >
                 Instagram
               </a>
               <a
-                href=""
+                href="https://github.com/amankidamtea"
                 className={`${kaushan.className} rounded-full bg-black px-5 py-2 text-[14px] text-white sm:px-8 sm:text-[18px] md:px-10 md:text-[20px]`}
               >
                 Github
@@ -272,22 +278,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 justify-center gap-6 sm:grid-cols-2 md:gap-10 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 justify-center gap-6 sm:grid-cols-2 md:gap-10 lg:grid-cols-5">
           {portFolioData.map((item, i) => (
             <a
               key={i}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-60 w-full items-start justify-center overflow-hidden rounded-4xl bg-gray-200 p-2 sm:h-72 md:h-100"
+              className="flex h-60 relative w-full items-start justify-center overflow-hidden rounded-4xl bg-gray-200 p-2 sm:h-72 md:h-100"
             >
+              <div className="absolute top-5 left-5 bg-black/50 text-white px-2 rounded-full">{item.category}</div>
               <Image
                 src={item.image}
                 alt={item.title}
                 width={500}
                 height={200}
                 priority
-                className="w-[50%] object-cover shadow-2xl"
+                className="w-[70%] object-cover shadow-2xl"
               />
             </a>
           ))}
@@ -436,15 +443,15 @@ export default function Home() {
           <div className="flex flex-row gap-6 text-[18px] sm:text-[24px] md:flex-col md:gap-5 md:text-[30px]">
             <div className="flex items-center gap-3 text-[12px] md:text-[17px]">
               <Image src="/icon/linkedin.png" alt="LinkedIn" width={20} height={20} className="object-contain" />
-              <a href="">Linkedin</a>
+              <a href="https://www.linkedin.com/in/idham-asegap-006173285/">Linkedin</a>
             </div>
             <div className="flex items-center gap-3 text-[12px] md:text-[17px]">
               <Image src="/icon/wa.png" alt="WhatsApp" width={20} height={20} className="object-contain" />
-              <a href="">Whatsapp</a>
+              <a href="https://wa.me/6285723142771">Whatsapp</a>
             </div>
             <div className="flex items-center gap-3 text-[12px] md:text-[17px]">
               <Image src="/icon/email.png" alt="Email" width={20} height={20} className="object-contain" />
-              <a href="">Email</a>
+              <a href="mailto:idamassegaf9@gmail.com">Email</a>
             </div>
           </div>
         </div>
